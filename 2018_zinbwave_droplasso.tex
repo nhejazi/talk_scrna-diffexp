@@ -1,0 +1,129 @@
+\documentclass{beamer}
+%
+% Choose how your presentation looks.
+%
+% For more themes, color themes and font themes, see:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+%
+\mode<presentation>
+{
+  \usetheme{default}      % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usefonttheme{default}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+}
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+
+\usepackage{amstext}
+%\usepackage{coloremoji}
+
+\usepackage{graphicx}
+\graphicspath{ {figs/} }
+
+\setbeameroption{hide notes}
+\setbeamertemplate{note page}[plain]
+\usepackage{listings}
+\usepackage{datetime}
+\usepackage{url}
+
+% specifications for presenter mode
+%\beamerdefaultoverlayspecification{<+->}
+%\setbeamercovered{transparent}
+
+% math shorthand
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\newcommand{\D}{\mathcal{D}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\X}{\mathcal{X}}
+\newcommand{\lik}{\mathcal{L}}
+\DeclarePairedDelimiterX{\infdivx}[2]{(}{)}{%
+  #1\;\delimsize\|\;#2%
+}
+\newcommand{\infdiv}{D\infdivx}
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+% Bibliography
+\usepackage{natbib}
+\bibpunct{(}{)}{,}{a}{}{;}
+\usepackage{bibentry}
+
+%\nobibliography*
+\title[zinbwave-droplasso]{Differential Expression Analysis for Single-Cell
+  RNA-seq Data}
+\subtitle{\vspace*{0.5em} \scriptsize for the \textit{Computational Biology
+  Doctoral Seminar},\\ organized by N.~Yosef \& T.~Ashuach, Spring 2018,
+  UC Berkeley}
+\author{Kevin Benac and Nima Hejazi}
+\institute{Group in Biostatistics,\\ University of California, Berkeley}
+\date{05 April 2018}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Preview}
+
+\begin{itemize}
+  \itemsep10pt
+  \item ...
+  \item ...
+  \item ...
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{The Data and Objective}
+
+\begin{itemize}
+  \itemsep10pt
+  \item ...
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Review}
+
+\begin{itemize}
+  \itemsep10pt
+  \item ...
+  \item ...
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% don't want dimming with references
+\setbeamercovered{}
+\beamerdefaultoverlayspecification{}
+
+\begin{frame}[c,allowframebreaks]{References}
+
+\bibliographystyle{apalike}
+\nocite{*}
+\bibliography{refs}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
+
