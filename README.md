@@ -19,13 +19,3 @@ This talk is a presentation of the following two papers
 Slides from the presentation are available
 [here](https://www.stat.berkeley.edu/~nhejazi/present/2018_zinbwave_droplasso.pdf).
 
----
-
-## License
-
-To the extent possible under law, [Nima Hejazi](https://nimahejazi.org)
-has waived all copyright and related or neighboring rights to this work.
-This work is published from the United States.
-<br/>
-[![CC0](http://i.creativecommons.org/p/zero/1.0/88x31.png)](http://creativecommons.org/publicdomain/zero/1.0/)
-
