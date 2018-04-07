@@ -19,6 +19,8 @@
 
 \usepackage{amstext}
 %\usepackage{coloremoji}
+\usepackage{layout}
+\usepackage{multirow}
 
 \usepackage{graphicx}
 \graphicspath{ {figs/} }
@@ -56,14 +58,23 @@
 \usepackage{bibentry}
 
 %\nobibliography*
-\title[zinbwave-droplasso]{Differential Expression Analysis for Single-Cell
-  RNA-seq Data}
-\subtitle{\vspace*{0.5em} \scriptsize for the \textit{Computational Biology
-  Doctoral Seminar},\\ organized by N.~Yosef \& T.~Ashuach, Spring 2018,
-  UC Berkeley}
+\title[zinbwave-droplasso]{Differential Expression Analysis Techniques for
+  Single-Cell RNA-seq Experiments}
+\subtitle{\vspace*{0.5em} \scriptsize for the Computational Biology Doctoral
+  Seminar (CMPBIO 293),\\ organized by N.~Yosef \& T.~Ashuach, Spring 2018, UC
+  Berkeley}
 \author{Kevin Benac and Nima Hejazi}
 \institute{Group in Biostatistics,\\ University of California, Berkeley}
-\date{05 April 2018}
+\date{11 April 2018}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\setcounter{tocdepth}[2]
+\AtBeginSubsection[]{
+\begin{frame}{Outline}
+\tableofcontents[currentsection,currentsubsection]
+\end{frame}
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -74,12 +85,96 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+\subsection{Data}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Preview}
+\begin{frame}{The Data: Single-Cell RNA-seq}
 
 \begin{itemize}
   \itemsep10pt
   \item ...
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{The Data: Single-Cell RNA-seq}
+
+\begin{itemize}
+  \itemsep10pt
+  \item ...
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{The Data: Single-Cell RNA-seq}
+
+\begin{itemize}
+  \itemsep10pt
+  \item ...
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Objective}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{The Objective: Differential Expression}
+
+\begin{itemize}
+  \itemsep10pt
+  \item ...
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{The Objective: Differential Expression}
+
+\begin{itemize}
+  \itemsep10pt
+  \item ...
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{The Objective: Differential Expression}
+
+\begin{itemize}
+  \itemsep10pt
+  \item ...
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Methodology}
+\subsection{ZINB-WaVE}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{ZINB-WaVE I}
+
+\begin{itemize}
+  \itemsep10pt
+  \item ...
+  \item ...
+\end{itemize}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{ZINB-WaVE II}
+
+\begin{itemize}
+  \itemsep10pt
   \item ...
   \item ...
 \end{itemize}
@@ -88,15 +183,143 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{The Data and Objective}
+\begin{frame}{ZINB-WaVE III}
 
 \begin{itemize}
   \itemsep10pt
+  \item ...
   \item ...
 \end{itemize}
 
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{ZINB-WaVE IV}
+
+\begin{itemize}
+  \itemsep10pt
+  \item ...
+  \item ...
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{ZINB-WaVE V}
+
+\begin{itemize}
+  \itemsep10pt
+  \item ...
+  \item ...
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{DropLasso}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{DropLasso I}
+
+\begin{itemize}
+  \itemsep10pt
+  \item ...
+  \item ...
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{DropLasso II}
+
+\begin{itemize}
+  \itemsep10pt
+  \item ...
+  \item ...
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{DropLasso III}
+
+\begin{itemize}
+  \itemsep10pt
+  \item ...
+  \item ...
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{DropLasso IV}
+
+\begin{itemize}
+  \itemsep10pt
+  \item ...
+  \item ...
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{DropLasso V}
+
+\begin{itemize}
+  \itemsep10pt
+  \item ...
+  \item ...
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Comparison}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{ZINB-WaVE v.~DropLasso I}
+
+\begin{itemize}
+  \itemsep10pt
+  \item ...
+  \item ...
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{ZINB-WaVE v.~DropLasso II}
+
+\begin{itemize}
+  \itemsep10pt
+  \item ...
+  \item ...
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{ZINB-WaVE v.~DropLasso III}
+
+\begin{itemize}
+  \itemsep10pt
+  \item ...
+  \item ...
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusions}
+\subsection{Review}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Review}
@@ -117,9 +340,11 @@
 
 \begin{frame}[c,allowframebreaks]{References}
 
-\bibliographystyle{apalike}
+\small
+\bibliographystyle{plainnat}
 \nocite{*}
 \bibliography{refs}
+\itemize
 
 \end{frame}
 
