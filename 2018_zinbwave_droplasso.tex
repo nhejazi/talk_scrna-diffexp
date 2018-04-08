@@ -39,6 +39,7 @@
 \usepackage{bm}
 \usepackage{amsmath}
 \usepackage{mathtools}
+\newcommand{\R}{\mathbb{R}}
 \newcommand{\D}{\mathcal{D}}
 \newcommand{\E}{\mathbb{E}}
 \newcommand{\F}{\mathcal{F}}
@@ -92,7 +93,7 @@
 \begin{frame}{The Data: Single-Cell RNA-seq}
 
 \begin{itemize}
-  \itemsep10pt
+  \itemsep12pt
   \item ...
 \end{itemize}
 
@@ -103,7 +104,7 @@
 \begin{frame}{The Data: Single-Cell RNA-seq}
 
 \begin{itemize}
-  \itemsep10pt
+  \itemsep12pt
   \item ...
 \end{itemize}
 
@@ -114,7 +115,7 @@
 \begin{frame}{The Data: Single-Cell RNA-seq}
 
 \begin{itemize}
-  \itemsep10pt
+  \itemsep12pt
   \item ...
 \end{itemize}
 
@@ -127,7 +128,11 @@
 \begin{frame}{The Objective: Differential Expression}
 
 \begin{itemize}
-  \itemsep10pt
+  \itemsep12pt
+  \item Many experimental settings seek to isolate a subset of biomarkers from
+    the full (larger) observed list observed in the experiments.
+  \item Why ``differential''? Finding a subset of relevant biomarkers is done
+    with respect to a particular condition of interest (e.g., disease).
   \item ...
 \end{itemize}
 
@@ -138,19 +143,18 @@
 \begin{frame}{The Objective: Differential Expression}
 
 \begin{itemize}
-  \itemsep10pt
-  \item ...
-\end{itemize}
-
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}{The Objective: Differential Expression}
-
-\begin{itemize}
-  \itemsep10pt
-  \item ...
+  \itemsep12pt
+  \item Regularized Linear Models:
+    \[
+      \min_{w \in \R^d} \left\{ \frac{1}{n} \sum_{i = 1}^n \lik(w, x_i, y_i) +
+        \lambda \Omega(w) \right\}
+    \]
+  \item Lasso for continuous outcomes (squared-error loss):
+    \[
+      \min_{w \in \R^d} \left\{ \frac{1}{n} \sum_{i = 1}^n \left(y_i - \sum_{j =
+        1}^d w_j x_{i,j} \right)^2 + \lambda \sum_{j = 1}^d \lvert w_j \rvert
+        \right\}
+    \]
 \end{itemize}
 
 \end{frame}
@@ -163,7 +167,7 @@
 \begin{frame}{ZINB-WaVE I}
 
 \begin{itemize}
-  \itemsep10pt
+  \itemsep12pt
   \item ...
   \item ...
 \end{itemize}
@@ -174,7 +178,7 @@
 \begin{frame}{ZINB-WaVE II}
 
 \begin{itemize}
-  \itemsep10pt
+  \itemsep12pt
   \item ...
   \item ...
 \end{itemize}
@@ -186,7 +190,7 @@
 \begin{frame}{ZINB-WaVE III}
 
 \begin{itemize}
-  \itemsep10pt
+  \itemsep12pt
   \item ...
   \item ...
 \end{itemize}
@@ -198,7 +202,7 @@
 \begin{frame}{ZINB-WaVE IV}
 
 \begin{itemize}
-  \itemsep10pt
+  \itemsep12pt
   \item ...
   \item ...
 \end{itemize}
@@ -210,7 +214,7 @@
 \begin{frame}{ZINB-WaVE V}
 
 \begin{itemize}
-  \itemsep10pt
+  \itemsep12pt
   \item ...
   \item ...
 \end{itemize}
@@ -224,9 +228,21 @@
 \begin{frame}{DropLasso I}
 
 \begin{itemize}
-  \itemsep10pt
+  \itemsep12pt
+  \item Introducing dropout ($\delta_i \sim Bern(p)^d$):
+    \[
+      \min_{w \in \R^d} \left\{ \frac{1}{n} \sum_{i = 1}^n \E_{\delta_i}
+        \lik \left(w, \delta_i \odot \frac{x_i}{p}, y_i \right) + \lambda
+        \lVert w \rVert_1 \right\}
+    \]
   \item ...
-  \item ...
+    \[
+      \begin{aligned}
+      \E_{\delta_i} \sum_{j = 1}^{d} w_j \left( \delta_i \odot \frac{x_i}{p}
+      \right)_j =& \sum_{j = 1}^d \E_{\delta_i} w_j \delta_{i,j}
+      \frac{x_{i,j}}{p} \\ =& \sum_{j = 1}^d w_j x_{i,j}
+      \end{aligned}
+    \]
 \end{itemize}
 
 \end{frame}
@@ -236,7 +252,7 @@
 \begin{frame}{DropLasso II}
 
 \begin{itemize}
-  \itemsep10pt
+  \itemsep12pt
   \item ...
   \item ...
 \end{itemize}
@@ -248,7 +264,7 @@
 \begin{frame}{DropLasso III}
 
 \begin{itemize}
-  \itemsep10pt
+  \itemsep12pt
   \item ...
   \item ...
 \end{itemize}
@@ -260,7 +276,7 @@
 \begin{frame}{DropLasso IV}
 
 \begin{itemize}
-  \itemsep10pt
+  \itemsep12pt
   \item ...
   \item ...
 \end{itemize}
@@ -272,7 +288,7 @@
 \begin{frame}{DropLasso V}
 
 \begin{itemize}
-  \itemsep10pt
+  \itemsep12pt
   \item ...
   \item ...
 \end{itemize}
@@ -286,7 +302,7 @@
 \begin{frame}{ZINB-WaVE v.~DropLasso I}
 
 \begin{itemize}
-  \itemsep10pt
+  \itemsep12pt
   \item ...
   \item ...
 \end{itemize}
@@ -298,7 +314,7 @@
 \begin{frame}{ZINB-WaVE v.~DropLasso II}
 
 \begin{itemize}
-  \itemsep10pt
+  \itemsep12pt
   \item ...
   \item ...
 \end{itemize}
@@ -310,7 +326,7 @@
 \begin{frame}{ZINB-WaVE v.~DropLasso III}
 
 \begin{itemize}
-  \itemsep10pt
+  \itemsep12pt
   \item ...
   \item ...
 \end{itemize}
@@ -325,7 +341,7 @@
 \begin{frame}{Review}
 
 \begin{itemize}
-  \itemsep10pt
+  \itemsep12pt
   \item ...
   \item ...
 \end{itemize}
