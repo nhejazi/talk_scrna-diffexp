@@ -39,6 +39,7 @@
 \usepackage{bm}
 \usepackage{amsmath}
 \usepackage{mathtools}
+\newcommand{\R}{\mathbb{R}}
 \newcommand{\D}{\mathcal{D}}
 \newcommand{\E}{\mathbb{E}}
 \newcommand{\F}{\mathcal{F}}
@@ -91,10 +92,15 @@
 
 \begin{frame}{The Data: Single-Cell RNA-seq}
 \begin{itemize}
+<<<<<<< HEAD
   \itemsep10pt
   \item scRNA-seq fast growing approach to measure the genome-wide transcriptome of many individual cells in parallel (Kolodziejczyk et al., 2015).
   \item Major advance compared to standard “bulk” RNA sequencing to investigate complex heterogeneous tissues,
   \item Access to cell-to-cell variability: better accuracy.
+=======
+  \itemsep12pt
+  \item ...
+>>>>>>> 44f041ec337b792ead82102c8363513f2995e489
 \end{itemize}
 
 \end{frame}
@@ -105,12 +111,17 @@
 
 %No free lunch thm
 \begin{itemize}
+<<<<<<< HEAD
   \itemsep10pt
   \item However, analysis of scRNA-seq data challenging.
   \item In one cell, only a tiny amount of RNA is present and large fraction of polyadenylated RNA can be stochastically lost during sample preparation steps (cell lysis, reverse transcription or amplification). \\
  $ \Longrightarrow$ Many genes fail to be detected although they are expressed!
   \item In practice, not uncommon to end up with a matrix of read counts where about 80\% of the coefficients are zeros.
   \item This zeros are called \textit{dropouts}.
+=======
+  \itemsep12pt
+  \item ...
+>>>>>>> 44f041ec337b792ead82102c8363513f2995e489
 \end{itemize}
 
 \end{frame}
@@ -144,10 +155,15 @@ Xkr4 & 0 & 0 & 0 & 14 & 0 & 0 & 0  \\
 \begin{frame}{The Data: Single-Cell RNA-seq}
 
 \begin{itemize}
+<<<<<<< HEAD
   \itemsep10pt
   \item Raises modelling and computational issues.
   \item Need to detect a signal when most of the values are zeros only because they are missing.
   \item Traditional methods used for bulk RNA-seq data might not  be sensible anymore.
+=======
+  \itemsep12pt
+  \item ...
+>>>>>>> 44f041ec337b792ead82102c8363513f2995e489
 \end{itemize}
 
 \end{frame}
@@ -159,8 +175,16 @@ Xkr4 & 0 & 0 & 0 & 14 & 0 & 0 & 0  \\
 \begin{frame}{The Objective: Differential Expression}
 
 \begin{itemize}
-  \itemsep10pt
-  \item ...
+  \itemsep12pt
+  \item Why ``differential''? The goal is to find a subset of relevant
+    biomarkers with respect to a particular condition of interest (e.g.,
+    disease, tissue of origin).
+  \item Many experimental settings seek to isolate a subset of biomarkers from
+    the full (larger) assayed set in order to identify biological patterns and
+    better inform future biological experiments.
+  \item Since experimental costs are high and modern biotechnologies allow
+    numerous biological targets (e.g., genes) to be assayed, the result is a
+    very high-dimensional statistical problem.
 \end{itemize}
 
 \end{frame}
@@ -170,19 +194,18 @@ Xkr4 & 0 & 0 & 0 & 14 & 0 & 0 & 0  \\
 \begin{frame}{The Objective: Differential Expression}
 
 \begin{itemize}
-  \itemsep10pt
-  \item ...
-\end{itemize}
-
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}{The Objective: Differential Expression}
-
-\begin{itemize}
-  \itemsep10pt
-  \item ...
+  \itemsep12pt
+  \item Regularized Linear Models:
+    \[
+      \min_{w \in \R^d} \left\{ \frac{1}{n} \sum_{i = 1}^n \lik(w, x_i, y_i) +
+        \lambda \Omega(w) \right\}
+    \]
+  \item Lasso for continuous outcomes (squared-error loss):
+    \[
+      \min_{w \in \R^d} \left\{ \frac{1}{n} \sum_{i = 1}^n \left(y_i - \sum_{j =
+        1}^d w_j x_{i,j} \right)^2 + \lambda \sum_{j = 1}^d \lvert w_j \rvert
+        \right\}
+    \]
 \end{itemize}
 
 \end{frame}
@@ -195,10 +218,16 @@ Xkr4 & 0 & 0 & 0 & 14 & 0 & 0 & 0  \\
 \begin{frame}{ZINB-WaVE}
 
 \begin{itemize}
+<<<<<<< HEAD
   \itemsep10pt
   \item Method that leads to low-dimensional representations of the data the same way PCA or tSNE does. \pause
   \item However accounts for zero inflation (dropouts), over-dispersion, and the count nature of the data.
   \item No need for normalization.
+=======
+  \itemsep12pt
+  \item ...
+  \item ...
+>>>>>>> 44f041ec337b792ead82102c8363513f2995e489
 \end{itemize}
 
 \end{frame}
@@ -210,12 +239,18 @@ Xkr4 & 0 & 0 & 0 & 14 & 0 & 0 & 0  \\
 \begin{frame}{ZINB-WaVE}
 Mathematical set-up:
 \begin{itemize}
+<<<<<<< HEAD
   \itemsep10pt
   \item $n$ samples (single-cells),
   \item $J$ genes,
   \item $Y_{ij}$ read counts for gene $j$ in cell $i$, $1\leq \ldots \leq n, \quad 1\leq j \leq J.$,
   \item $\pi_{ij}$: probability of dropout,
   \item $\mu$: mean expression level.
+=======
+  \itemsep12pt
+  \item ...
+  \item ...
+>>>>>>> 44f041ec337b792ead82102c8363513f2995e489
 \end{itemize}
 
 \end{frame}
@@ -223,6 +258,14 @@ Mathematical set-up:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+<<<<<<< HEAD
+=======
+\begin{itemize}
+  \itemsep12pt
+  \item ...
+  \item ...
+\end{itemize}
+>>>>>>> 44f041ec337b792ead82102c8363513f2995e489
 
 \begin{frame}{ZINB-WaVE}
 \begin{figure}
@@ -235,6 +278,7 @@ Mathematical set-up:
 \begin{frame}{ZINB-WaVE}
 
 \begin{itemize}
+<<<<<<< HEAD
   \itemsep10pt
   \item ZINB-WaVE mainly used for normalization and dimensionality reduction but can also be used for DE analysis.
   \item Compute weights from the estimated $\pi$ using Bayes formula.
@@ -254,6 +298,11 @@ Mathematical set-up:
   \item End-up with a matrix of fitted values.
   \item Not sparse anymore, look more like bulk RNA-seq data.\\
   $\Longrightarrow$ We can use classical tools for differential expression analysis (ex. edgeR or DESeq2 packages in R).
+=======
+  \itemsep12pt
+  \item ...
+  \item ...
+>>>>>>> 44f041ec337b792ead82102c8363513f2995e489
 \end{itemize}
 
 \end{frame}
@@ -266,9 +315,23 @@ Mathematical set-up:
 \begin{frame}{DropLasso I}
 
 \begin{itemize}
-  \itemsep10pt
-  \item ...
-  \item ...
+  \itemsep12pt
+  \item Consider the following data structure:
+    \begin{itemize}
+      \itemsep10pt
+      \item $x_i \in \mathbb{R}^d$ --- design matrix of scRNA-seq counts
+      \item $y_i \in \mathbb{R}$ --- cell-level outcome of interest (e.g.,
+        tissue of origin)
+      \item $\delta_i \in \{0, 1\}^d$ s.t.~$\delta_i \sim Bern(p)^d$ --- random
+        dropout mask
+      \item $\delta \odot x \in \mathbb{R}^d$ --- corrupted pattern for
+        scRNA-seq dropout
+      \item $\text{P}(\delta_i = 1) = \text{p}$ --- probability of \textit{not}
+        being censored by dropout
+    \end{itemize}
+  \item The DropLasso procedure seeks to identify differentially expressed genes
+    based on cell-level differences while accounting for the dropout noise that
+    masks scRNA data.
 \end{itemize}
 
 \end{frame}
@@ -278,9 +341,21 @@ Mathematical set-up:
 \begin{frame}{DropLasso II}
 
 \begin{itemize}
-  \itemsep10pt
-  \item ...
-  \item ...
+  \itemsep12pt
+  \item Introducing dropout ($\delta_i \sim Bern(p)^d$):
+    \[
+      \min_{w \in \R^d} \left\{ \frac{1}{n} \sum_{i = 1}^n \E_{\delta_i}
+        \lik \left(w, \delta_i \odot \frac{x_i}{p}, y_i \right) + \lambda
+        \lVert w \rVert_1 \right\}
+    \]
+  \item Independence from $p$ in expectation:
+    \[
+      \begin{aligned}
+      \E_{\delta_i} \sum_{j = 1}^{d} w_j \left( \delta_i \odot \frac{x_i}{p}
+      \right)_j =& \sum_{j = 1}^d \E_{\delta_i} w_j \delta_{i,j}
+      \frac{x_{i,j}}{p} \\ =& \sum_{j = 1}^d w_j x_{i,j}
+      \end{aligned}
+    \]
 \end{itemize}
 
 \end{frame}
@@ -290,9 +365,21 @@ Mathematical set-up:
 \begin{frame}{DropLasso III}
 
 \begin{itemize}
-  \itemsep10pt
-  \item ...
-  \item ...
+  \itemsep12pt
+  \item Introducing the dropout term $\delta$ amounts to censoring the observed
+    data and adjusting (i.e., $\frac{x_p}{p}$) such that the effects of dropout
+    noise are removed.
+  \item This places a \textit{statistical model} on the dropout noise --- i.e.,
+    $\delta_i \sim Bern(p)^d$
+    \begin{itemize}
+      \item Dropout noise is independent across samples and genes. (Fine
+        starting point but probably untrue scientifically.)
+      \item Modeling dropout noise in a more flexible manner could likely
+        improve DropLasso performance and is identified as an item of future
+        work.
+    \end{itemize}
+  \item Merely introducing the simple dropout correction significantly improves
+    performance under standard modeling metrics (e.g., AUC).
 \end{itemize}
 
 \end{frame}
@@ -301,23 +388,11 @@ Mathematical set-up:
 
 \begin{frame}{DropLasso IV}
 
-\begin{itemize}
-  \itemsep10pt
-  \item ...
-  \item ...
-\end{itemize}
-
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}{DropLasso V}
-
-\begin{itemize}
-  \itemsep10pt
-  \item ...
-  \item ...
-\end{itemize}
+\begin{figure}[H]
+  \includegraphics[width=\textwidth]{droplasso}
+  \caption{Excerpt from table 3 of ``DropLasso: A robust variant of Lasso for
+    single cell RNA-seq data'' Khalfaoui \& Vert (2018)}
+\end{figure}
 
 \end{frame}
 
@@ -328,7 +403,7 @@ Mathematical set-up:
 \begin{frame}{ZINB-WaVE v.~DropLasso I}
 
 \begin{itemize}
-  \itemsep10pt
+  \itemsep12pt
   \item ...
   \item ...
 \end{itemize}
@@ -340,7 +415,7 @@ Mathematical set-up:
 \begin{frame}{ZINB-WaVE v.~DropLasso II}
 
 \begin{itemize}
-  \itemsep10pt
+  \itemsep12pt
   \item ...
   \item ...
 \end{itemize}
@@ -352,7 +427,7 @@ Mathematical set-up:
 \begin{frame}{ZINB-WaVE v.~DropLasso III}
 
 \begin{itemize}
-  \itemsep10pt
+  \itemsep12pt
   \item ...
   \item ...
 \end{itemize}
@@ -367,7 +442,7 @@ Mathematical set-up:
 \begin{frame}{Review}
 
 \begin{itemize}
-  \itemsep10pt
+  \itemsep12pt
   \item ...
   \item ...
 \end{itemize}
