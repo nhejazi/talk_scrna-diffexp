@@ -1,0 +1,10 @@
+\select@language {english}
+\beamer@sectionintoc {1}{Introduction}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{Data}{2}{0}{1}
+\beamer@subsectionintoc {1}{2}{Objective}{7}{0}{1}
+\beamer@sectionintoc {2}{Methodology}{11}{0}{2}
+\beamer@subsectionintoc {2}{1}{ZINB-WaVE}{11}{0}{2}
+\beamer@subsectionintoc {2}{2}{DropLasso (Nima)}{18}{0}{2}
+\beamer@subsectionintoc {2}{3}{Comparison}{24}{0}{2}
+\beamer@sectionintoc {3}{Conclusions}{28}{0}{3}
+\beamer@subsectionintoc {3}{1}{Review}{28}{0}{3}
