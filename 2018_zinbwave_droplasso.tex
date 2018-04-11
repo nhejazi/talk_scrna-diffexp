@@ -92,15 +92,12 @@
 
 \begin{frame}{The Data: Single-Cell RNA-seq}
 \begin{itemize}
-<<<<<<< HEAD
   \itemsep10pt
-  \item scRNA-seq fast growing approach to measure the genome-wide transcriptome of many individual cells in parallel (Kolodziejczyk et al., 2015).
-  \item Major advance compared to standard “bulk” RNA sequencing to investigate complex heterogeneous tissues,
+  \item scRNA-seq fast growing approach to measure the genome-wide transcriptome
+    of many individual cells in parallel (Kolodziejczyk et al., 2015).
+  \item Major advance compared to standard “bulk” RNA sequencing to investigate
+    complex heterogeneous tissues,
   \item Access to cell-to-cell variability: better accuracy.
-=======
-  \itemsep12pt
-  \item ...
->>>>>>> 44f041ec337b792ead82102c8363513f2995e489
 \end{itemize}
 
 \end{frame}
@@ -111,17 +108,16 @@
 
 %No free lunch thm
 \begin{itemize}
-<<<<<<< HEAD
   \itemsep10pt
-  \item However, analysis of scRNA-seq data challenging.
-  \item In one cell, only a tiny amount of RNA is present and large fraction of polyadenylated RNA can be stochastically lost during sample preparation steps (cell lysis, reverse transcription or amplification). \\
- $ \Longrightarrow$ Many genes fail to be detected although they are expressed!
-  \item In practice, not uncommon to end up with a matrix of read counts where about 80\% of the coefficients are zeros.
+  \item However, analysis of single-cell RNA-seq data is challenging.
+  \item In one cell, only a tiny amount of RNA is present and large fraction of
+    polyadenylated RNA can be stochastically lost during sample preparation
+    steps (cell lysis, reverse transcription or amplification). \\
+    $\Longrightarrow$ Many genes fail to be detected although they are
+    expressed!
+  \item In practice, not uncommon to end up with a matrix of read counts where
+    about 80\% of the coefficients are zeros.
   \item This zeros are called \textit{dropouts}.
-=======
-  \itemsep12pt
-  \item ...
->>>>>>> 44f041ec337b792ead82102c8363513f2995e489
 \end{itemize}
 
 \end{frame}
@@ -134,18 +130,18 @@
 \centering
 \begin{tabular}{rrrrrrrrrrr}
   \hline
- & Cell1 & Cell 2 & Cell 3 & Cell 4 & Cell 5 & Cell 6 & Cell 7  \\ 
+ & Cell1 & Cell 2 & Cell 3 & Cell 4 & Cell 5 & Cell 6 & Cell 7  \\
   \hline
-Xkr4 & 0 & 0 & 0 & 14 & 0 & 0 & 0  \\ 
-  Syt11 & 1 & 9 & 2 & 2 & 0 & 0 & 0  \\ 
-  Cpe & 0 & 0 & 16 & 0 & 0 & 0 & 0  \\ 
-  Rp1 & 0 & 0 & 0 & 0 & 0 & 0 & 0  \\ 
-  Gm73 & 0 & 0 & 0 & 0 & 0 & 0 & 0  \\ 
-  Gm79 & 0 & 0 & 0 & 0 & 0 & 0 & 0  \\ 
-  Mpl15 & 8 & 8 & 6 & 1 & 0 & 0 & 0  \\ 
-  Gm61 & 0 & 0 & 0 & 0 & 0 & 3 & 0 \\ 
-  Lypla1 & 1 & 23 & 266 & 1 & 0 & 1 & 0 \\ 
-  Tcea1 & 63 & 101 & 18 & 29 & 2 & 34 & 0  \\ 
+  Xkr4 & 0 & 0 & 0 & 14 & 0 & 0 & 0  \\
+  Syt11 & 1 & 9 & 2 & 2 & 0 & 0 & 0  \\
+  Cpe & 0 & 0 & 16 & 0 & 0 & 0 & 0  \\
+  Rp1 & 0 & 0 & 0 & 0 & 0 & 0 & 0  \\
+  Gm73 & 0 & 0 & 0 & 0 & 0 & 0 & 0  \\
+  Gm79 & 0 & 0 & 0 & 0 & 0 & 0 & 0  \\
+  Mpl15 & 8 & 8 & 6 & 1 & 0 & 0 & 0  \\
+  Gm61 & 0 & 0 & 0 & 0 & 0 & 3 & 0 \\
+  Lypla1 & 1 & 23 & 266 & 1 & 0 & 1 & 0 \\
+  Tcea1 & 63 & 101 & 18 & 29 & 2 & 34 & 0 \\
    \hline
 \end{tabular}
 \end{table}
@@ -155,15 +151,12 @@ Xkr4 & 0 & 0 & 0 & 14 & 0 & 0 & 0  \\
 \begin{frame}{The Data: Single-Cell RNA-seq}
 
 \begin{itemize}
-<<<<<<< HEAD
   \itemsep10pt
   \item Raises modelling and computational issues.
-  \item Need to detect a signal when most of the values are zeros only because they are missing.
-  \item Traditional methods used for bulk RNA-seq data might not  be sensible anymore.
-=======
-  \itemsep12pt
-  \item ...
->>>>>>> 44f041ec337b792ead82102c8363513f2995e489
+  \item Need to detect a signal when most of the values are zeros only because
+    they are missing.
+  \item Traditional methods used for bulk RNA-seq data might not be sensible
+    anymore.
 \end{itemize}
 
 \end{frame}
@@ -218,16 +211,12 @@ Xkr4 & 0 & 0 & 0 & 14 & 0 & 0 & 0  \\
 \begin{frame}{ZINB-WaVE}
 
 \begin{itemize}
-<<<<<<< HEAD
   \itemsep10pt
-  \item Method that leads to low-dimensional representations of the data the same way PCA or tSNE does. \pause
-  \item However accounts for zero inflation (dropouts), over-dispersion, and the count nature of the data.
+  \item Method that leads to low-dimensional representations of the data the
+    same way PCA or tSNE does. \pause
+  \item However accounts for zero inflation (dropouts), over-dispersion, and the
+    count nature of the data.
   \item No need for normalization.
-=======
-  \itemsep12pt
-  \item ...
-  \item ...
->>>>>>> 44f041ec337b792ead82102c8363513f2995e489
 \end{itemize}
 
 \end{frame}
@@ -239,33 +228,18 @@ Xkr4 & 0 & 0 & 0 & 14 & 0 & 0 & 0  \\
 \begin{frame}{ZINB-WaVE}
 Mathematical set-up:
 \begin{itemize}
-<<<<<<< HEAD
   \itemsep10pt
   \item $n$ samples (single-cells),
   \item $J$ genes,
-  \item $Y_{ij}$ read counts for gene $j$ in cell $i$, $1\leq \ldots \leq n, \quad 1\leq j \leq J.$,
+  \item $Y_{ij}$ read counts for gene $j$ in cell $i$, $1\leq \ldots \leq n,
+    \quad 1\leq j \leq J.$,
   \item $\pi_{ij}$: probability of dropout,
-  \item $\mu$: mean expression level.
-=======
-  \itemsep12pt
-  \item ...
-  \item ...
->>>>>>> 44f041ec337b792ead82102c8363513f2995e489
+  \item $\mu_{ij}$: mean expression level.
 \end{itemize}
 
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-<<<<<<< HEAD
-=======
-\begin{itemize}
-  \itemsep12pt
-  \item ...
-  \item ...
-\end{itemize}
->>>>>>> 44f041ec337b792ead82102c8363513f2995e489
 
 \begin{frame}{ZINB-WaVE}
 \begin{figure}
@@ -275,17 +249,17 @@ Mathematical set-up:
 \end{figure}
 \end{frame}
 
-\begin{frame}{ZINB-WaVE}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{frame}{ZINB-WaVE}
 \begin{itemize}
-<<<<<<< HEAD
   \itemsep10pt
-  \item ZINB-WaVE mainly used for normalization and dimensionality reduction but can also be used for DE analysis.
+  \item ZINB-WaVE mainly used for normalization and dimensionality reduction but
+    can also be used for DE analysis.
   \item Compute weights from the estimated $\pi$ using Bayes formula.
   \item If the observed counts are positive, $w = 1$, otherwise, $0<w<1$.
   \item The higher $\pi$, the lower $w$
 \end{itemize}
-
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -294,25 +268,22 @@ Mathematical set-up:
 
 \begin{itemize}
   \itemsep10pt
-  \item Once we have the weights, fit a negative binomial glm using the weights.
+  \item Once we have the weights, fit a weighted negative binomial generalized
+    linear model using the ZINB-WaVE weights.
   \item End-up with a matrix of fitted values.
   \item Not sparse anymore, look more like bulk RNA-seq data.\\
-  $\Longrightarrow$ We can use classical tools for differential expression analysis (ex. edgeR or DESeq2 packages in R).
-=======
-  \itemsep12pt
-  \item ...
-  \item ...
->>>>>>> 44f041ec337b792ead82102c8363513f2995e489
+    $\Longrightarrow$ We can use classical tools for differential expression
+    analysis (e.g.~edgeR, DESeq2, limma-voom in R/Bioconductor).
 \end{itemize}
 
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{DropLasso (Nima)}
+\subsection{DropLasso}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{DropLasso I}
+\begin{frame}{DropLasso}
 
 \begin{itemize}
   \itemsep12pt
@@ -338,7 +309,7 @@ Mathematical set-up:
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{DropLasso II}
+\begin{frame}{DropLasso}
 
 \begin{itemize}
   \itemsep12pt
@@ -362,7 +333,7 @@ Mathematical set-up:
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{DropLasso III}
+\begin{frame}{DropLasso}
 
 \begin{itemize}
   \itemsep12pt
@@ -386,7 +357,7 @@ Mathematical set-up:
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{DropLasso IV}
+\begin{frame}{DropLasso}
 
 \begin{figure}[H]
   \includegraphics[width=\textwidth]{droplasso}
@@ -397,54 +368,37 @@ Mathematical set-up:
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusions}
 \subsection{Comparison}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{ZINB-WaVE v.~DropLasso I}
+\begin{frame}{ZINB-WaVE v.~DropLasso}
 
 \begin{itemize}
   \itemsep12pt
-  \item ...
-  \item ...
+  \item ZINB-WaVE is designed to address issues in the statistical analysis
+    pipeline that come before differential expression analysis:
+    \begin{itemize}
+      \item Normalization
+      \item Dimensionality Reduction
+    \end{itemize}
+  \item Since ZINB-WaVE attempts to make scRNA-seq data resemble bulk RNA-seq
+    data, the weights can be used with standard differential expression tools.
 \end{itemize}
 
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{ZINB-WaVE v.~DropLasso II}
+\begin{frame}{ZINB-WaVE v.~DropLasso}
 
 \begin{itemize}
   \itemsep12pt
-  \item ...
-  \item ...
-\end{itemize}
-
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}{ZINB-WaVE v.~DropLasso III}
-
-\begin{itemize}
-  \itemsep12pt
-  \item ...
-  \item ...
-\end{itemize}
-
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Conclusions}
-\subsection{Review}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}{Review}
-
-\begin{itemize}
-  \itemsep12pt
-  \item ...
-  \item ...
+  \item DropLasso seeks to cast the scRNA-seq DE problem as a standard Lasso
+    problem, accounting for dropout noise using the regularization introduced in
+    the neural networks literature.
+  \item Since DropLasso is a very new method, there have been no in-depth
+    comparisons of the two techniques as of yet.
 \end{itemize}
 
 \end{frame}
