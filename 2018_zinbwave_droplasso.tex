@@ -129,11 +129,15 @@
 
 \begin{itemize}
   \itemsep12pt
+  \item Why ``differential''? The goal is to find a subset of relevant
+    biomarkers with respect to a particular condition of interest (e.g.,
+    disease, tissue of origin).
   \item Many experimental settings seek to isolate a subset of biomarkers from
-    the full (larger) observed list observed in the experiments.
-  \item Why ``differential''? Finding a subset of relevant biomarkers is done
-    with respect to a particular condition of interest (e.g., disease).
-  \item ...
+    the full (larger) assayed set in order to identify biological patterns and
+    better inform future biological experiments.
+  \item Since experimental costs are high and modern biotechnologies allow
+    numerous biological targets (e.g., genes) to be assayed, the result is a
+    very high-dimensional statistical problem.
 \end{itemize}
 
 \end{frame}
@@ -210,22 +214,36 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{DropLasso (Nima)}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{ZINB-WaVE V}
+\begin{frame}{DropLasso I}
 
 \begin{itemize}
   \itemsep12pt
-  \item ...
-  \item ...
+  \item Consider the following data structure:
+    \begin{itemize}
+      \itemsep10pt
+      \item $x_i \in \mathbb{R}^d$ --- design matrix of scRNA-seq counts
+      \item $y_i \in \mathbb{R}$ --- cell-level outcome of interest (e.g.,
+        tissue of origin)
+      \item $\delta_i \in \{0, 1\}^d$ s.t.~$\delta_i \sim Bern(p)^d$ --- random
+        dropout mask
+      \item $\delta \odot x \in \mathbb{R}^d$ --- corrupted pattern for
+        scRNA-seq dropout
+      \item $\text{P}(\delta_i = 1) = \text{p}$ --- probability of \textit{not}
+        being censored by dropout
+    \end{itemize}
+  \item The DropLasso procedure seeks to identify differentially expressed genes
+    based on cell-level differences while accounting for the dropout noise that
+    masks scRNA data.
 \end{itemize}
 
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{DropLasso (Nima)}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{DropLasso I}
+\begin{frame}{DropLasso II}
 
 \begin{itemize}
   \itemsep12pt
@@ -235,7 +253,7 @@
         \lik \left(w, \delta_i \odot \frac{x_i}{p}, y_i \right) + \lambda
         \lVert w \rVert_1 \right\}
     \]
-  \item ...
+  \item Independence from $p$ in expectation:
     \[
       \begin{aligned}
       \E_{\delta_i} \sum_{j = 1}^{d} w_j \left( \delta_i \odot \frac{x_i}{p}
@@ -249,24 +267,24 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{DropLasso II}
-
-\begin{itemize}
-  \itemsep12pt
-  \item ...
-  \item ...
-\end{itemize}
-
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{frame}{DropLasso III}
 
 \begin{itemize}
   \itemsep12pt
-  \item ...
-  \item ...
+  \item Introducing the dropout term $\delta$ amounts to censoring the observed
+    data and adjusting (i.e., $\frac{x_p}{p}$) such that the effects of dropout
+    noise are removed.
+  \item This places a \textit{statistical model} on the dropout noise --- i.e.,
+    $\delta_i \sim Bern(p)^d$
+    \begin{itemize}
+      \item Dropout noise is independent across samples and genes. (Fine
+        starting point but probably untrue scientifically.)
+      \item Modeling dropout noise in a more flexible manner could likely
+        improve DropLasso performance and is identified as an item of future
+        work.
+    \end{itemize}
+  \item Merely introducing the simple dropout correction significantly improves
+    performance under standard modeling metrics (e.g., AUC).
 \end{itemize}
 
 \end{frame}
@@ -275,23 +293,11 @@
 
 \begin{frame}{DropLasso IV}
 
-\begin{itemize}
-  \itemsep12pt
-  \item ...
-  \item ...
-\end{itemize}
-
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}{DropLasso V}
-
-\begin{itemize}
-  \itemsep12pt
-  \item ...
-  \item ...
-\end{itemize}
+\begin{figure}[H]
+  \includegraphics[width=\textwidth]{droplasso}
+  \caption{Excerpt from table 3 of ``DropLasso: A robust variant of Lasso for
+    single cell RNA-seq data'' Khalfaoui \& Vert (2018)}
+\end{figure}
 
 \end{frame}
 
